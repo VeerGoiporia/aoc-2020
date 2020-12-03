@@ -14,7 +14,7 @@ pub fn day_one() {
 fn part_one(numbers: Vec<i32>, target_sum: i32) {
     let found = find_two_values(numbers, target_sum);
 
-    if found == false {
+    if !found {
         println!("Could not find two values that summed to {}", target_sum);
     }
 }
@@ -22,7 +22,7 @@ fn part_one(numbers: Vec<i32>, target_sum: i32) {
 fn part_two(numbers: Vec<i32>, target_sum: i32) {
     let found = find_three_values(numbers, target_sum);
 
-    if found == false {
+    if !found {
         println!("Could not find three values that summed to {}", target_sum);
     }
 }
@@ -41,7 +41,7 @@ fn find_two_values(numbers: Vec<i32>, target: i32) -> bool {
             }
         }
     }
-    return false;
+    false
 }
 
 fn find_three_values(numbers: Vec<i32>, target: i32) -> bool {
@@ -60,7 +60,7 @@ fn find_three_values(numbers: Vec<i32>, target: i32) -> bool {
             }
         }
     }
-    return false;
+    false
 }
 
 fn convert_file_to_nums(filename: &str) -> Vec<i32> {

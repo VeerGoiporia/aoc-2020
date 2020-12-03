@@ -22,11 +22,7 @@ struct Entry {
 impl Entry {
     fn validate_rule1(self) -> bool {
         let count = self.pwd.matches(self.char).count() as i32;
-        if count >= self.first_num && count <= self.second_num {
-            return true;
-        } else {
-            return false;
-        }
+        count >= self.first_num && count <= self.second_num
     }
 
     fn validate_rule2(self) -> bool {
