@@ -4,13 +4,14 @@ use std::fs;
 
 pub fn day_two() {
     println!("-----DAY2------");
+    let entries: Vec<Entry> = convert_line_to_entry("inputs/input_day2.txt");
     println!("Part 1");
-    part_one();
+    part_one(entries.clone());
     println!("Part 2");
-    part_two();
+    part_two(entries);
 }
 
-#[derive(Debug, Deserialize, Recap)]
+#[derive(Debug, Deserialize, Recap, Clone)]
 #[recap(regex = r"(?P<first_num>.*)-(?P<second_num>.*) (?P<char>[a-z]): (?P<pwd>.*)")]
 struct Entry {
     first_num: i32,
@@ -36,8 +37,7 @@ impl Entry {
     }
 }
 
-fn part_one() {
-    let entries: Vec<Entry> = convert_line_to_entry("input_day2.txt");
+fn part_one(entries: Vec<Entry>) {
     let mut count: i32 = 0;
     for entry in entries {
         if entry.validate_rule1() {
@@ -48,8 +48,7 @@ fn part_one() {
     println!("Valid password count (Rule-set 1): {}", count);
 }
 
-fn part_two() {
-    let entries: Vec<Entry> = convert_line_to_entry("input_day2.txt");
+fn part_two(entries: Vec<Entry>) {
     let mut count: i32 = 0;
     for entry in entries {
         if entry.validate_rule2() {

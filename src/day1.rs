@@ -2,7 +2,7 @@ use std::fs;
 
 pub fn day_one() {
     println!("-----DAY1------");
-    let numbers: Vec<i32> = convert_file_to_nums("input_day1.txt");
+    let numbers: Vec<i32> = convert_file_to_nums("inputs/input_day1.txt");
     let target_sum = 2020;
 
     println!("Part 1");
