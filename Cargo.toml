@@ -10,3 +10,4 @@ publish = ["metaswitch"]
 [dependencies]
 recap = "0.1"
 serde = "1.0.114"
+regex = "1.3.9"
